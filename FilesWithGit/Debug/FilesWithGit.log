@@ -1,0 +1,3 @@
+﻿  FilesWithGit.cpp
+C:\Users\izzyr\OneDrive\Desktop\member1\FilesWithGit\FilesWithGit.cpp(21,9): warning C4101: 'shoesize': unreferenced local variable
+  FilesWithGit.vcxproj -> C:\Users\izzyr\OneDrive\Desktop\member1\FilesWithGit\Debug\FilesWithGit.exe

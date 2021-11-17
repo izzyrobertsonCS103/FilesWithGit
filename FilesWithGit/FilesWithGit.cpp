@@ -17,25 +17,45 @@ int main()
     Shoe s[5];
     Shoe *ptr;
     ptr = s;
-    int i;
+    int i=0;
+    int shoesize;
 
     ofstream outfile;
     outfile.open("shoes.txt", ios::app);
 
-    for (i = 0; i < 2; i++) {
-        cout << "\n Shoe Number: " << i + 1 << endl;
-        cout << " Shoe size: US";
+    for (i = 0; i < 5; i++) {
+        cout << "\n shoe number: " << i + 1 << endl;
+        cout << " shoe size: us";
         cin >> ptr[i].size;
-        cout << " Shoe price: $";
+        cout << " shoe price: $";
         cin >> ptr[i].price;
-        cout << " Shoe color: ";
+        cout << " shoe color: ";
         cin >> ptr[i].color;
 
         outfile << ptr[i].size << endl;
         outfile << ptr[i].price << endl;
         outfile << ptr[i].color << endl;
     }
+    
     outfile.close();
+
+    ifstream infile;
+    infile.open("shoes.txt");
+
+    cout << "What size shoe are you looking for? ";
+    cin >> shoesize;
+
+    for (i = 0; i < 5; i++) {
+        infile >> ptr[i].size;
+        infile >> ptr[i].price;
+        infile >> ptr[i].color;
+        while (shoesize == ptr[i].size) {
+            cout << "\nSize: " << ptr[i].size;
+            cout << "\nPrice: " << ptr[i].price;
+            cout << "\nColor: " << ptr[i].color;
+        }
+    }
+    infile.close();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
